@@ -1,0 +1,13 @@
+  <form method="get" action="tiki-switch_lang.php" target="_self">
+       <select name="language" size="1" onchange="this.form.submit();">
+                <option value="en">
+          English
+        </option>
+                <option value="uk" selected="selected">
+          Українська (uk)
+        </option>
+                <option value="ja">
+          Японська (日本語, ja)
+        </option>
+                </select>
+</form>

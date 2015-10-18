@@ -1,0 +1,16 @@
+
+cp ../tiki-7.0/_htaccess_v3 .
+
+ln -s /var/www/tikiwiki_custom/templates/styles/dmytro ./templates/styles/dmytro
+ln -s /var/www/tikiwiki_custom/templates/styles/kraiany ./templates/styles/kraiany
+ln -s /var/www/tikiwiki_custom/styles/kraiany ./styles/kraiany
+ln -s /var/www/tikiwiki_custom/styles/dmytro ./styles/dmytro
+ln -s /var/www/tikiwiki_custom/styles/dmytro.css ./styles/dmytro.css
+ln -s /var/www/tikiwiki_custom/styles/kraiany.css ./styles/kraiany.css
+ln -s /var/www/tikiwiki_custom/styles/Slackers ./styles/Slackers
+ln -s /var/www/tikiwiki_custom/styles/Slackers.css ./styles/Slackers.css
+
+mv ./img/wiki_up ./img/wiki_up.save
+mv ./img/wiki ./img/wiki.save
+ln -s /var/www/tikiwiki_custom/img/wiki_up ./img/wiki_up
+ln -s /var/www/tikiwiki_custom/img/wiki ./img/wiki

@@ -1,0 +1,8 @@
+<Files *>
+#	Require valid-user
+	Require group NOACCESS-family-admin
+	AuthName "Yarylo secure"
+	AuthType Basic
+	AuthUserFile "/www/users"
+	AuthGroupFile "/www/groups"
+</Files>
