@@ -4,7 +4,7 @@ RUN rm -fr /app
 ADD src /app
 RUN chown www-data -R /app/tiki
 
-ADD kraiany.dump /kraiany.dump
+ADD kraiany.dump.bz2 /kraiany.dump.bz2
 
 ADD prepare.sh /prepare.sh
 

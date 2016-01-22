@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ $(id -u) = 0 ] || { echo "Must run as root"; exit 1 ; }
+ 
+docker kill kraiany_site kraiany-nginx
+docker rm kraiany_site kraiany-nginx
+
+docker run -d --name kraiany_site -p 8080:80  kraiany_docker_site
+docker run -d -p 80:80 --name kraiany-nginx --net=host -v /export/Repos/kraiany_site_docker/nginx.conf:/etc/nginx/nginx.conf:ro nginx

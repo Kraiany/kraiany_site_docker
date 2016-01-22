@@ -2,8 +2,8 @@
 
 VOLUME_HOME="/var/lib/mysql"
 
-sed -ri -e "s/^upload_max_filesize.*/upload_max_filesize = ${PHP_UPLOAD_MAX_FILESIZE}/" \
-    -e "s/^post_max_size.*/post_max_size = ${PHP_POST_MAX_SIZE}/" /etc/php5/apache2/php.ini
+sed -ri -e "s/^upload_max_filesize.*/upload_max_filesize = 0/" \
+    -e "s/^post_max_size.*/post_max_size = 0 /" /etc/php5/apache2/php.ini
 if [[ ! -d $VOLUME_HOME/mysql ]]; then
     echo "=> An empty or uninitialized MySQL volume is detected in $VOLUME_HOME"
     echo "=> Installing MySQL ..."
@@ -25,7 +25,7 @@ while [[ RET -ne 0 ]]; do
 done
 
 mysqladmin create kraiany
-mysql -uroot kraiany < /kraiany.dump
+bunzip2 -c /kraiany.dump.bz2 | mysql -uroot kraiany 
 
 killall mysqld; sleep 2
 killall -9 mysqld
